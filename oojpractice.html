@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OOJ Practice</title>
+</head>
+<body>
+
+    <input type="text" name="name" id="">
+    <button>Submit</button>
+
+    <p></p>
+    
+</body>
+
+<script>
+        const input = document.querySelector('input');
+        const btn = document.querySelector('button');
+        const para = document.querySelector('p');
+        
+        btn.onclick = function (){
+            const reply = input.value;
+             para.textContent = reply ;
+           
+        };
+        
+
+
+    function House(type, color, numberOfRooms){
+
+        this.type = type;
+        this.color = color;
+        this.numberOfRooms = numberOfRooms;
+
+        
+        
+    };
+    House.prototype.description = function(){
+
+alert('The house is a '+this.type+' '+'with '+this.color+' '+'colors. It has '+this.numberOfRooms+' numbers of room.');
+
+};
+
+    const house1 = new House('Duplex','White',7);
+
+    function SmallHouse(type, color, numberOfRooms, address){
+
+        House.call(this,type, color, numberOfRooms);
+        this.address = function(){
+            alert(address);
+        };
+    };
+
+    SmallHouse.prototype = Object.create(House.prototype);
+    //SmallHouse.prototype.constructor = SmallHouse;
+
+    const address = '12345 gbagede close';
+    const smallHouse1 = new SmallHouse('Bungalow','White', 3, address);
+
+
+
+</script>
+</html>

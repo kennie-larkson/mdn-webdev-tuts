@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Classes</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    class Person {
+
+        constructor(first, last, age, gender, interests){
+            this.name = {
+                first,
+                last
+            };
+            this.age = age;
+            this.gender = gender;
+            this.interests = interests;
+
+        };
+
+        greeting(){
+            console.log(`Hi! I'm ${this.name.first} .`);
+        };
+
+        farewell(){
+            console.log(`${this.name.first} has left the building. Bye for now!`);
+        };
+
+    };
+
+    class Teacher extends Person{
+        constructor(first, last, age, gender, interests, subject, grade){
+
+            super(first, last, age, gender, interests);
+
+            this._subject = subject;
+            this.grade = grade;
+        };
+
+        get subject(){     // getters are used to get / fetch the value of a variable
+            return this._subject;
+        }
+        set subject(newSubject){//setters are used to change the value of a variable
+            this._subject = newSubject;
+        }
+    };
+
+    let Kehinde = new Teacher('Kehinde','Lawal',33, 'Male', ['Programming'], 'JavaScript', 5);
+
+
+
+</script>
+
+</html>
